@@ -39,8 +39,6 @@ print("Sending...")
 sendMsg(random.choice(msgs.welcomeTitle) + "\n" + random.choice(msgs.welcomeMsg))
 
 # PtitCafe
-sendAttachment([
-    ptitCafeMenu
-])
+sendAttachment(ptitCafeMenu)
 
 print("Sent.")
