@@ -13,15 +13,14 @@ import msgs
 import ptitCafe
 
 load_dotenv();
+slackURL = "https://hooks.slack.com/services/" + os.getenv("SLACK_URL_TOKEN");
 
 ## Functions Send
 def sendMsg(msg):
-    slackURL = "https://hooks.slack.com/services/" + os.getenv("SLACKURLTOKEN");
     dataPOST = {'text': msg}
     req = requests.post(slackURL, json=dataPOST);
 
 def sendAttachment(msg):
-    slackURL = "https://hooks.slack.com/services/" + os.getenv("SLACKURLTOKEN")
     dataPOST = {'attachments': msg}
     req = requests.post(slackURL, json=dataPOST)
 
