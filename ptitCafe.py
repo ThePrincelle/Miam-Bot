@@ -10,8 +10,8 @@ import msgs
 now = datetime.now()
 
 ## Consts :
-ptitCafeTitle = "Petit Café"
-ptitCafeLink = "http://le-ptit-cafe.fr"
+title = "Petit Café"
+link = "http://le-ptit-cafe.fr"
 
 def getRawJson():
     res = requests.get("http://le-ptit-cafe.fr/wp-json/wp/v2/posts?categories=4&per_page=1");
@@ -34,6 +34,6 @@ def getLastMenu():
         for stuff in cleanStuff:
             publish = publish.replace(stuff, "");
         publish = publish.rstrip().replace("\n", "\n- ")
-        return msgs.buildMenu(ptitCafeTitle, ptitCafeLink, ("Menu du " + publishTitle.lower() + " :"), json[0]['link'], ("- " + publish));
+        return msgs.buildMenu(title, link, ("Menu du " + publishTitle.lower() + " :"), json[0]['link'], ("- " + publish));
 
-    return msgs.noMenu(ptitCafeTitle, ptitCafeLink);
+    return msgs.noMenu(title, link);

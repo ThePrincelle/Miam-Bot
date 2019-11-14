@@ -11,6 +11,7 @@ import random
 import msgs
 
 import ptitCafe
+import houblo
 
 load_dotenv();
 slackURL = "https://hooks.slack.com/services/" + os.getenv("SLACK_URL_TOKEN");
@@ -22,7 +23,7 @@ def sendMsg(msg):
 
 def sendAttachment(msg):
     dataPOST = {'attachments': msg}
-    req = requests.post(slackURL, json=dataPOST)
+    req = requests.post(slackURL, json=dataPOST);
 
 ## Menus
 
