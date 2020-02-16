@@ -4,32 +4,49 @@
 ## ------
 
 import os
-from dotenv import load_dotenv
 import requests
-import json
 import random
+
+import grandPere
+import kebab
 import msgs
+import pipio
 
 import ptitCafe
 import houblo
 
-load_dotenv();
-slackURL = "https://hooks.slack.com/services/" + os.getenv("SLACK_URL_TOKEN");
+# To Get Google Place ID :
+# Go to : https://developers.google.com/places/web-service/place-id
+
+slackURL = "https://hooks.slack.com/services/" + os.getenv("SLACK_URL_TOKEN")
 
 ## Functions Send
 def sendMsg(msg):
     dataPOST = {'text': msg}
-    req = requests.post(slackURL, json=dataPOST);
+    req = requests.post(slackURL, json=dataPOST)
+    # print(req.status_code)
 
 def sendAttachment(msg):
     dataPOST = {'attachments': msg}
-    req = requests.post(slackURL, json=dataPOST);
+    req = requests.post(slackURL, json=dataPOST)
+    # print(req.status_code)
 
 ## Menus
 
-# Get Ptit Cafe
-print("Getting Menu from : Petit Cafe")
+print("Getting Menu from : P'tit Cafe")
 ptitCafeMenu = ptitCafe.getLastMenu()
+
+print("Getting Menu from : La Houblonnière")
+houbloMenu = houblo.getLastMenu()
+
+print("Getting Menu from : Grand Pere")
+grandPereMenu = grandPere.getLastMenu()
+
+print("Getting Menu from : Chez Victor")
+kebabMenu = kebab.getLastMenu()
+
+print("Getting Menu from : Chez Pipio")
+pipioMenu = pipio.getLastMenu()
 
 ## SEND EVERYTHING !
 
@@ -38,7 +55,11 @@ print("Sending...")
 # Welcome
 sendMsg(random.choice(msgs.welcomeTitle) + "\n" + random.choice(msgs.welcomeMsg))
 
-# PtitCafe
+# Menus
 sendAttachment(ptitCafeMenu)
+sendAttachment(houbloMenu)
+sendAttachment(grandPereMenu)
+sendAttachment(kebabMenu)
+sendAttachment(pipioMenu)
 
 print("Sent.")
