@@ -10,7 +10,10 @@ import json
 
 from msgs import buildHours
 
-g_api_key = str(os.getenv('GOOGLE_API_KEY'))
+from dotenv import load_dotenv
+load_dotenv()
+
+g_api_key = os.getenv('GOOGLE_API_KEY')
 
 link = "https://maps.googleapis.com/maps/api/place/details/json?key=" + g_api_key + "&place_id="
 
