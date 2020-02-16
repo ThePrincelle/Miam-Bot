@@ -18,7 +18,7 @@ import houblo
 # To Get Google Place ID :
 # Go to : https://developers.google.com/places/web-service/place-id
 
-slackURL = "https://hooks.slack.com/services/" + os.getenv("SLACK_URL_TOKEN")
+slackURL = "https://hooks.slack.com/services/" + str(os.getenv("SLACK_URL_TOKEN"))
 
 ## Functions Send
 def sendMsg(msg):
