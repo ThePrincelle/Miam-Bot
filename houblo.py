@@ -37,4 +37,4 @@ def getMenu(status_open, phone_number):
 	for article in articles:
 		# print(article['text'].splitlines())
 		return msgs.buildMenu((title + " (dernier post) (" + status_open + ")"), link, article['text'].splitlines()[0],
-							  article['post_url'], (article['text'].splitlines()[1::] + "\nTéléphone : " + phone_number))
+							  article['post_url'], (str(article['text'].splitlines()[1::]) + "\nTéléphone : " + phone_number))
