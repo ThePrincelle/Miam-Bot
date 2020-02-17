@@ -52,8 +52,8 @@ kebabMenu = kebab.getLastMenu()
 print("Getting Menu from : Chez Pipio")
 pipioMenu = pipio.getLastMenu()
 
-print("Getting Menu from : Japonais HiBiKi")
-hibikiMenu = hibiki.getLastMenu()
+# print("Getting Menu from : Japonais HiBiKi")
+# hibikiMenu = hibiki.getLastMenu()
 
 ## SEND EVERYTHING !
 
@@ -68,6 +68,6 @@ sendAttachment(houbloMenu)
 sendAttachment(grandPereMenu)
 sendAttachment(kebabMenu)
 sendAttachment(pipioMenu)
-sendAttachment(hibikiMenu)
+# sendAttachment(hibikiMenu)
 
 print("Sent.")
