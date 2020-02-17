@@ -28,7 +28,8 @@ def getLastMenu():
 	if googleData['boolean']:
 		return getMenu(googleData['status'], googleData['phone_number'])
 	else:
-		return msgs.buildClosed((title + " (" + googleData['status'] + ")"), link, (googleData['hours'] + "\nDemain : " + googleData['tomorrow']))
+		return msgs.buildClosed((title + " (" + googleData['status'] + ")"), link,
+								(googleData['hours'] + "\nDemain : " + googleData['tomorrow']))
 
 
 def getMenu(status_open, phone_number):
@@ -36,5 +37,12 @@ def getMenu(status_open, phone_number):
 
 	for article in articles:
 		# print(article['text'].splitlines())
-		return msgs.buildMenu((title + " (dernier post) (" + status_open + ")"), link, article['text'].splitlines()[0],
-							  article['post_url'], (str(article['text'].splitlines()[1::]) + "\nTéléphone : " + phone_number))
+		phone = "\nTéléphone : " + phone_number
+		menu_raw = article['text'].splitlines()[1::]
+		menu = ""
+		if not menu_raw:
+			menu = phone
+		else:
+			menu = menu_raw + phone
+
+		return msgs.buildMenu((title + " (dernier post) (" + status_open + ")"), link, article['text'].splitlines()[0], article['post_url'], menu)
