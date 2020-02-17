@@ -70,4 +70,7 @@ sendAttachment(kebabMenu)
 sendAttachment(pipioMenu)
 # sendAttachment(hibikiMenu)
 
+# Bye
+sendMsg(random.choice(msgs.goodbyeMsg))
+
 print("Sent.")

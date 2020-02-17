@@ -27,6 +27,12 @@ nothingMsg = [
 	"Je ne trouve pas le menu du jour..."
 ]
 
+goodbyeMsg = [
+	"Bon appétit !",
+	"Bonne journée ;)",
+	"Bye ;)"
+]
+
 
 ## Building Messages
 
