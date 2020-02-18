@@ -39,6 +39,9 @@ def getMenu(status_open, phone_number):
 		# print(article['text'].splitlines())
 		phone = "\nTéléphone : " + phone_number
 		menu_raw = article['text'].splitlines()[1::]
+		menu_formatted = ""
+		for line in menu_raw:
+			menu_formatted += line + "\n"
 		menu = ""
 		if not menu_raw:
 			menu = phone
