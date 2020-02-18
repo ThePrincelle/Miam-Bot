@@ -43,6 +43,6 @@ def getMenu(status_open, phone_number):
 		if not menu_raw:
 			menu = phone
 		else:
-			menu = menu_raw + phone
+			menu = str(menu_raw) + phone
 
 		return msgs.buildMenu((title + " (dernier post) (" + status_open + ")"), link, article['text'].splitlines()[0], article['post_url'], menu)
