@@ -48,7 +48,7 @@ def getMenu(status_open, hours, phone_number):
         for stuff in cleanStuff:
             publish = publish.replace(stuff, "");
         publish = publish.rstrip().replace("\n", "\n- ")
-        return msgs.buildMenu((title + " (" + status_open + ")"), link, ("Menu du " + publishTitle.lower() + " :"), json[0]['link'],
+        return msgs.buildMenu((title + " (" + status_open + ")"), link, ("Menu du " + publishTitle.lower()), json[0]['link'],
                               ("- " + publish))
 
     return msgs.noMenu((title + " (" + status_open + ")"), link, hours)
